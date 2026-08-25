@@ -1,26 +1,43 @@
-# LeetCode DSA Patterns — Java
+# Pathikrit Sanyal — LeetCode DSA Patterns in Java
 
-A pattern-first Java repository for students preparing for FAANG-style DSA interviews.
+This repository documents my personal DSA preparation journey for FAANG-style coding interviews.
 
-The goal is **not to memorize solutions**. For every problem, learn to answer:
+I am building it pattern by pattern in Java, with an emphasis on understanding **why an approach works**, how to recognize it in an interview, and how to explain the optimized solution clearly instead of memorizing code.
 
-1. What clues in the question reveal the pattern?
-2. What does the window/pointer state represent?
-3. When does the state become valid or invalid?
-4. What changes when a pointer moves?
-5. Why is the optimized complexity correct?
-6. What are the common implementation mistakes?
+## Profiles
 
-## How to use this repository
+- **LeetCode:** https://leetcode.com/u/pathikritsanyal76/
+- **GitHub:** https://github.com/pathikrit76
 
-For each problem:
+## What this repository represents
 
-- Read the problem and identify the pattern before opening the solution.
-- Explain the brute-force approach and its complexity.
-- Derive why repeated work can be reused.
-- Write the optimized solution from memory.
-- Dry-run it on at least one normal case and one edge case.
-- Be able to explain time and space complexity in an interview.
+This is my working DSA notebook and solution repository. Every problem added here is part of my structured interview preparation and is organized around reusable problem-solving patterns.
+
+For each problem, I aim to document:
+
+1. How to recognize the pattern from the question.
+2. The brute-force idea and why it is inefficient.
+3. The optimized intuition.
+4. The important invariant or state to maintain.
+5. When pointers/windows should move.
+6. Common implementation mistakes.
+7. Time and space complexity.
+8. The Java solution I practiced.
+
+## My interview-preparation approach
+
+I try to solve problems in this order:
+
+- Identify the pattern before coding.
+- Explain the brute-force approach.
+- Find the repeated work or bottleneck.
+- Derive the optimized approach.
+- Dry-run the algorithm manually.
+- Implement it in Java.
+- Review edge cases and complexity.
+- Revisit the problem until I can explain it without looking at the solution.
+
+The goal is **not to memorize hundreds of LeetCode solutions**. The goal is to master the smaller set of reusable DSA patterns behind them.
 
 ## Patterns
 
@@ -28,9 +45,10 @@ For each problem:
 
 Use Sliding Window when the problem works with a **contiguous subarray or substring** and neighboring candidate ranges share most of their elements.
 
+#### Fixed-size Sliding Window
+
 Solved so far:
 
-#### Fixed-size Sliding Window
 - Maximum Sum Subarray of Size K
 - LeetCode 643 — Maximum Average Subarray I
 - LeetCode 1343 — Number of Sub-arrays of Size K and Average >= Threshold
@@ -38,11 +56,22 @@ Solved so far:
 - Maximum Even Count in a Subarray of Size K
 
 #### Variable-size Sliding Window
+
+Solved so far:
+
 - LeetCode 209 — Minimum Size Subarray Sum
 - Longest Subarray with At Most Two Distinct Integers
 - LeetCode 3 — Longest Substring Without Repeating Characters
 - LeetCode 424 — Longest Repeating Character Replacement
 
-See [`01-sliding-window/README.md`](01-sliding-window/README.md) for pattern recognition rules, templates, interview reasoning, and common mistakes.
+See [`01-sliding-window/README.md`](01-sliding-window/README.md) for pattern-recognition rules, reusable templates, interview reasoning, and common mistakes.
 
-More patterns will be added as they are learned and mastered.
+## Repository roadmap
+
+I will continue expanding this repository as I master more interview patterns, including Two Pointers, Fast & Slow Pointers, Merge Intervals, Cyclic Sort, Linked List Reversal, Tree BFS/DFS, Binary Search, Heaps, Graphs, Backtracking, and Dynamic Programming.
+
+---
+
+### Ownership
+
+All solutions, notes, explanations, and progress tracking in this repository represent my personal DSA interview-preparation work and learning journey.
