@@ -24,6 +24,8 @@ For each problem, I aim to document:
 7. Time and space complexity.
 8. The Java solution I practiced.
 
+The comments inside the solution files are intentionally written as **reasoning notes**, not just descriptions of individual lines. The goal is to be able to revisit a problem later and reconstruct the algorithm from its intuition.
+
 ## My interview-preparation approach
 
 I try to solve problems in this order:
@@ -32,6 +34,7 @@ I try to solve problems in this order:
 - Explain the brute-force approach.
 - Find the repeated work or bottleneck.
 - Derive the optimized approach.
+- Define the window/pointer invariant.
 - Dry-run the algorithm manually.
 - Implement it in Java.
 - Review edge cases and complexity.
@@ -47,6 +50,8 @@ Use Sliding Window when the problem works with a **contiguous subarray or substr
 
 #### Fixed-size Sliding Window
 
+Recognition: the required candidate window has a predetermined size, or the problem itself implies one. For anagram/permutation problems, the pattern length determines the window size.
+
 Solved so far:
 
 - Maximum Sum Subarray of Size K
@@ -54,8 +59,36 @@ Solved so far:
 - LeetCode 1343 — Number of Sub-arrays of Size K and Average >= Threshold
 - LeetCode 1456 — Maximum Number of Vowels in a Substring of Given Length
 - Maximum Even Count in a Subarray of Size K
+- LeetCode 567 — Permutation in String
+- LeetCode 438 — Find All Anagrams in a String
+
+Key intuition:
+
+```text
+Build/maintain one window
+        ↓
+remove outgoing state
+        +
+add incoming state
+        ↓
+reuse previous work instead of recomputing the whole range
+```
+
+For permutations/anagrams:
+
+```text
+same characters in any order
+        ↓
+same character frequencies
+        ↓
+window size = pattern length
+        ↓
+Fixed Sliding Window + Frequency Counting
+```
 
 #### Variable-size Sliding Window
+
+Recognition: the window expands and shrinks according to a validity constraint rather than staying at a predetermined size.
 
 Solved so far:
 
@@ -63,12 +96,34 @@ Solved so far:
 - Longest Subarray with At Most Two Distinct Integers
 - LeetCode 3 — Longest Substring Without Repeating Characters
 - LeetCode 424 — Longest Repeating Character Replacement
+- LeetCode 1004 — Max Consecutive Ones III
+- LeetCode 76 — Minimum Window Substring
 
-See [`01-sliding-window/README.md`](01-sliding-window/README.md) for pattern-recognition rules, reusable templates, interview reasoning, and common mistakes.
+Two important templates:
+
+```text
+LONGEST VALID WINDOW
+expand right
+while INVALID:
+    shrink left
+update maximum
+```
+
+```text
+MINIMUM VALID WINDOW
+expand right
+while VALID:
+    update minimum
+    shrink left
+```
+
+The key is not memorizing those loops. Before coding, determine **what makes the current window valid or invalid** and what minimal state is needed to test that condition.
+
+See [`01-sliding-window/README.md`](01-sliding-window/README.md) for pattern-recognition rules, reusable templates, interview reasoning, solved-problem intuition, and common mistakes.
 
 ## Repository roadmap
 
-I will continue expanding this repository as I master more interview patterns, including Two Pointers, Fast & Slow Pointers, Merge Intervals, Cyclic Sort, Linked List Reversal, Tree BFS/DFS, Binary Search, Heaps, Graphs, Backtracking, and Dynamic Programming.
+I will continue expanding this repository as I master more interview patterns, including Two Pointers, Fast & Slow Pointers, Hashing, Prefix Sum, Merge Intervals, Cyclic Sort, Linked List Reversal, Tree BFS/DFS, Binary Search, Heaps, Graphs, Backtracking, and Dynamic Programming.
 
 ---
 
